@@ -87,6 +87,47 @@ class User {
 
     }
 
+
+
+
+    private String getUserParam2(String param1,String param2){
+        if(json!=null){
+
+            try {
+                JSONObject jsonObj=json.getJSONObject(param1);
+                if(jsonObj!=null){
+                    String param=jsonObj.getString(param2);
+
+                    return param;
+
+                }
+            } catch (Exception e) {
+            }
+
+        }
+        return "";
+    }
+
+
+    public String getLogin(){
+
+        return getUserParam2("login","uuid");
+
+    }
+
+    public String getLocation(){
+
+        return getUserParam2("location","city");
+
+
+    }
+
+    public String getRegistered(){
+
+        return getUserParam2("registered","date");
+
+
+    }
     /**
      * Повернути назву користувача
      * @return

@@ -27,6 +27,10 @@ class DisplayUser extends Display {
      * Пошта коритувача
      */
     private TextView textViewMail;
+
+    private TextView textViewLogin;
+    private TextView textViewLocation;
+    private TextView textViewRegisstered;
     /**
      * Кнопка повернутися назад
      */
@@ -44,6 +48,10 @@ class DisplayUser extends Display {
         textViewName=this.rootView.findViewById(R.id.textView_name);
         textViewMail=this.rootView.findViewById(R.id.textView_mail);
         buttonBack=this.rootView.findViewById(R.id.button_back);
+
+        textViewLogin=this.rootView.findViewById(R.id.textView_login);
+        textViewRegisstered=this.rootView.findViewById(R.id.textView_registered);
+        textViewLocation=this.rootView.findViewById(R.id.textView_location);
 
 
         buttonBack.setOnClickListener(this);
@@ -72,6 +80,10 @@ class DisplayUser extends Display {
 
             textViewName.setText(""+user.getName());
             textViewMail.setText(""+user.getEmail());
+
+            textViewLogin.setText(""+user.getLogin());
+            textViewRegisstered.setText(""+user.getRegistered());
+            textViewLocation.setText(""+user.getLocation());
 
 
         }
